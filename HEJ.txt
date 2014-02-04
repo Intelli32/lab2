@@ -6,5 +6,9 @@ Blabasflubanan
 lalala
 hdndndndnd
 
+<<<<<<< HEAD
 
 cicci här
+=======
+lalalalolololol
+>>>>>>> 5249d558939a327d5bfbd4469931ed6694efb303
