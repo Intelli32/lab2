@@ -30,6 +30,7 @@ public final class R {
     }
     public static final class id {
         public static final int example_text=0x7f070001;
+        public static final int lole=0x7f070002;
         public static final int this_is_example_view_id=0x7f070000;
     }
     public static final class layout {

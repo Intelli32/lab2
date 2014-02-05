@@ -3,9 +3,9 @@ package se.kth.csc.iprog.dinnerplanner.model;
 import java.util.HashSet;
 import java.util.Set;
 
-public class DinnerModel {
-	
 
+public class DinnerModel implements IDinnerModel {
+	
 	Set<Dish> dishes = new HashSet<Dish>();
 	
 	/**
@@ -13,7 +13,52 @@ public class DinnerModel {
 	 * When you do this you will have all the needed fields and methods
 	 * for the dinner planner (number of guests, selected dishes, etc.). 
 	 */
-	
+	public int nOG;
+	public int getNumberOfGuests() {
+		return nOG;
+	}
+
+	public void setNumberOfGuests(int numberOfGuests) {
+		nOG = numberOfGuests;
+	}
+
+	public Dish getSelectedDish(int type) {
+		for(Dish Dish : dishes){	
+		if(Dish.getType()==type){
+			return Dish;
+			}
+		}
+		return null;
+	}
+
+
+	public Set<Dish> getFullMenu() {
+		return dishes;
+	}
+
+
+	public Set<Ingredient> getAllIngredients() {
+		Set<Ingredient> allIngredients = new HashSet<Ingredient>();
+		for(Dish Dish : dishes){	
+			Set<Ingredient> list = Dish.getIngredients();
+			for(Ingredient Ing : list){
+				allIngredients.add(Ing);
+			}
+		}
+		return allIngredients;
+	}
+
+
+	public float getTotalMenuPrice() {
+		float totalPrice = 0;
+		int guests = getNumberOfGuests();
+		Set<Ingredient> list = getAllIngredients();
+		for(Ingredient ing:list){
+			totalPrice = totalPrice + (float)ing.getPrice();
+		}
+		totalPrice = totalPrice * guests;
+		return totalPrice;
+	}
 	
 	/**
 	 * The constructor of the overall model. Set the default values here
