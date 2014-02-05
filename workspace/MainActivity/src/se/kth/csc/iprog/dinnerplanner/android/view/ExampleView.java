@@ -27,10 +27,10 @@ public class ExampleView {
 		this.view = view;
 		
 		TextView example = (TextView) view.findViewById(R.id.example_text);
-		example.setText(lol);
+		example.setText(plice);
 		
 		TextView example2 = (TextView) view.findViewById(R.id.lole);
-		example2.setText(plice);
+		example2.setText(lol);
 
 
 		// Setup the rest of the view layout
